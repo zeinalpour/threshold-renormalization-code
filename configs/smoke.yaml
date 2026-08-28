@@ -1,0 +1,26 @@
+profile_name: smoke
+output_dir: results/smoke
+base_seed: 20260827
+p_values: [32, 64]
+replicates: 3
+bootstrap_resamples: 400
+workers: 2
+model:
+  gamma: 0.75
+  delta: 0.5
+  nu1: 0.05
+  nu2: 0.20
+cases:
+  - {id: comparable_improve, label: "Comparable: improve", alpha1: 1.25, alpha2: 1.25}
+  - {id: weaker_deteriorate, label: "Weaker II: deteriorate", alpha1: 1.55, alpha2: 1.20}
+solver:
+  kkt_tolerance: 1.0e-7
+  max_iterations: 10000
+  check_every: 10
+  power_iterations: 80
+  spectral_safety: 1.05
+state_evolution:
+  quadrature_nodes: 128
+  tolerance: 1.0e-9
+  max_iterations: 2000
+  damping: 0.60
